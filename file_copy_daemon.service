@@ -1,0 +1,18 @@
+// to start the service:
+// place this file in /etc/systemd/system/
+// sudo systemctl enable file_copy_daemon
+// sudo systemctl start file_copy_daemon
+
+[Unit]
+Description=File Copy Daemon API
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/dotnet run /path/to/file_copy_daemon.exe
+Restart=always
+User=youruser
+Environment=PATH=/usr/bin
+WorkingDirectory=/path/to
+
+[Install]
+WantedBy=multi-user.target

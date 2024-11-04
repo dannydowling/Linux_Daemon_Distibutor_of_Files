@@ -1,0 +1,6 @@
+@MultiSourceFileCopy_HostAddress = http://localhost:8432
+
+GET {{MultiSourceFileCopy_HostAddress}}/api/FileCopy/
+Accept: application/json
+
+###
