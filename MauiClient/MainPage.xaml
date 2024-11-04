@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FileCopyApp.MainPage">
+
+    <ScrollView>
+        <StackLayout Padding="10">
+            <Label Text="Select Files and Destinations" FontSize="24" HorizontalOptions="Center" />
+
+            <Button Text="Select Files" Clicked="OnSelectFilesClicked"/>
+            <ListView x:Name="fileList" />
+
+            <Button Text="Add Destination" Clicked="OnAddDestinationClicked" />
+            <ListView x:Name="destinationList" />
+
+            <Button Text="Copy Files" Clicked="OnCopyFilesClicked"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

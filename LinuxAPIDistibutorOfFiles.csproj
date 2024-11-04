@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -9,7 +9,95 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="MauiClient\Properties\launchSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="MauiClient\Properties\launchSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MauiClient\App.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="MauiClient\AppShell.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="MauiClient\MainPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="MauiClient\Platforms\Android\MainActivity.cs">
+      <ExcludeFromCurrentConfiguration>false</ExcludeFromCurrentConfiguration>
+    </Compile>
+    <Compile Update="MauiClient\Platforms\Android\MainApplication.cs">
+      <ExcludeFromCurrentConfiguration>false</ExcludeFromCurrentConfiguration>
+    </Compile>
+    <Compile Update="MauiClient\Platforms\iOS\AppDelegate.cs">
+      <ExcludeFromCurrentConfiguration>true</ExcludeFromCurrentConfiguration>
+    </Compile>
+    <Compile Update="MauiClient\Platforms\iOS\Program.cs">
+      <ExcludeFromCurrentConfiguration>true</ExcludeFromCurrentConfiguration>
+    </Compile>
+    <Compile Update="MauiClient\Platforms\MacCatalyst\AppDelegate.cs">
+      <ExcludeFromCurrentConfiguration>true</ExcludeFromCurrentConfiguration>
+    </Compile>
+    <Compile Update="MauiClient\Platforms\MacCatalyst\Program.cs">
+      <ExcludeFromCurrentConfiguration>true</ExcludeFromCurrentConfiguration>
+    </Compile>
+    <Compile Update="MauiClient\Platforms\Tizen\Main.cs">
+      <ExcludeFromCurrentConfiguration>true</ExcludeFromCurrentConfiguration>
+    </Compile>
+    <Compile Update="MauiClient\Platforms\Windows\App.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+      <ExcludeFromCurrentConfiguration>true</ExcludeFromCurrentConfiguration>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="MauiClient\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MauiClient\AppShell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MauiClient\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MauiClient\Platforms\Windows\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MauiClient\Platforms\Windows\Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="MauiClient\Resources\AppIcon\appicon.svg">
+      <Color>#512BD4</Color>
+      <ForegroundFile>Resources\AppIcon\appiconfg.svg</ForegroundFile>
+    </None>
+    <None Update="MauiClient\Resources\Images\dotnet_bot.png">
+      <Resize>True</Resize>
+      <BaseSize>300,185</BaseSize>
+    </None>
+    <None Update="MauiClient\Resources\Raw\AboutAssets.txt">
+      <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+    </None>
+    <None Update="MauiClient\Resources\Splash\splash.svg">
+      <Color>#512BD4</Color>
+      <BaseSize>128,128</BaseSize>
+    </None>
+    <None Update="MauiClient\Resources\Styles\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MauiClient\Resources\Styles\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 
 </Project>
